@@ -1,7 +1,17 @@
+import { useState } from "react";
+
 import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Routes from "./components/Routes";
 
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  const [darkTheme, setDarkTheme] = useState(false);
+  return (
+    <div className={darkTheme ? "dark" : ""}>
+      <div className="bg-gray-200">Hellow World</div>
+    </div>
+  );
 }
 
 export default App;
