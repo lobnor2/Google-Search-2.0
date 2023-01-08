@@ -6,12 +6,16 @@ const Routesgoogle = () => {
   return (
     <div className="p-4">
       <Routes>
-        <Route path="/">
+        {/* <Route path="/">
           <Navigate to="/search" />
-        </Route>
-        <Route path={["/search", "/images", "/news", "/videos"]}>
+        </Route> */}
+        <Route
+          path="/"
+          // {["/search", "/images", "/news", "/videos"]}
+        >
           <Results />
         </Route>
+        <Route path="/" element={<h1>hellwo</h1>} />
       </Routes>
     </div>
   );
