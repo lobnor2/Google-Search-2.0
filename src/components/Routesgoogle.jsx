@@ -6,16 +6,14 @@ const Routesgoogle = () => {
   return (
     <div className="p-4">
       <Routes>
-        {/* <Route path="/">
-          <Navigate to="/search" />
-        </Route> */}
-        <Route
-          path="/"
-          // {["/search", "/images", "/news", "/videos"]}
-        >
-          <Results />
-        </Route>
-        <Route path="/" element={<h1>hellwo</h1>} />
+        <Route path="/" element={<Navigate to="/search" />} />
+        {["search", "images", "news", "videos"].map((path) => (
+          <Route
+            path={path}
+            // path={["search", "images", "news", "videos"].flat()}
+            element={<Results />}
+          />
+        ))}
       </Routes>
     </div>
   );
