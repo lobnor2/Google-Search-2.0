@@ -39,4 +39,6 @@ const ResultContextProvider = ({ children }) => {
   );
 };
 
-export default ResultContextProvider;
+// export default ResultContextProvider;
+
+export const useResultContext = () => useContext(ResultContext);
