@@ -10,7 +10,7 @@ const Routesgoogle = () => {
         {["search", "images", "news", "videos"].map((path) => (
           <Route
             path={path}
-            // path={["search", "images", "news", "videos"].flat()}
+            // path={["search", "images", "news", "videos"].flat()} array path is no longer use in version 6
             element={<Results />}
           />
         ))}
