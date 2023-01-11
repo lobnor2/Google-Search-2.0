@@ -8,10 +8,10 @@ const ResultContextProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  //videos, /search, /images
+  //search, /images
   const getResults = async (type) => {
     setIsLoading(true);
-    const response = await fetch(`${baseUrl}/${type}`, {
+    const response = await fetch(`${baseUrl}${type}`, {
       method: "GET",
       //   params: {
       //     query: "word cup",
@@ -24,6 +24,7 @@ const ResultContextProvider = ({ children }) => {
       },
     });
     const data = await response.json();
+    console.log(data);
     setResults(data);
     //   .then((res) => res.json())
     //   .then((res) => setResults(res));
@@ -39,6 +40,6 @@ const ResultContextProvider = ({ children }) => {
   );
 };
 
-// export default ResultContextProvider;
+export default ResultContextProvider;
 
 export const useResultContext = () => useContext(ResultContext);
