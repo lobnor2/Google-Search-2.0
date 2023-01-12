@@ -7,7 +7,7 @@ const Routesgoogle = () => {
     <div className="p-4">
       <Routes>
         <Route path="/" element={<Navigate to="/search" />} />
-        {["search", "images", "news", "videos"].map((path) => (
+        {["search", "imagesearch"].map((path) => (
           <Route
             path={path}
             // path={["search", "images", "news", "videos"].flat()} array path is no longer use in version 6

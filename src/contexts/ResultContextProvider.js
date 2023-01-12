@@ -6,7 +6,7 @@ const baseUrl = "https://google-search72.p.rapidapi.com";
 const ResultContextProvider = ({ children }) => {
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState("lebron james");
 
   //search, /images
   const getResults = async (type) => {

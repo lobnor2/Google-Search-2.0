@@ -10,8 +10,15 @@ const Results = () => {
   const location = useLocation();
 
   useEffect(() => {
-    getResults("/search?query=javascript&num=50");
-  }, []);
+    if (searchTerm) {
+      if (location.pathname === "/imagesearch") {
+        getResults(`/search?query=${searchTerm} videos`);
+      } else {
+        getResults(`${location.pathname}?query=${searchTerm}&num=50`);
+      }
+    }
+    // getResults("/search?query=javascript&num=50");
+  }, [searchTerm, location.pathname]);
 
   if (isLoading) return <Loading />;
   switch (location.pathname) {
@@ -33,8 +40,25 @@ const Results = () => {
           ))}
         </div>
       );
-    case "/images":
-      return "Images";
+    case "/imagesearch":
+      return (
+        <div className="flex flex-wrap justify-center items-center">
+          {results?.items?.map(
+            ({ title, originalImageUrl, contextLink }, index) => (
+              <a
+                className="sm:p-3 p-5"
+                href={contextLink}
+                key={index}
+                target="_blank"
+                rel="nofeferrer"
+              >
+                <img src={originalImageUrl} alt={title} loading="lazy" />
+                <p className="w-30 break-words text-sm mt-2">{title}</p>
+              </a>
+            )
+          )}
+        </div>
+      );
     default:
       return "Error";
   }
