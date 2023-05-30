@@ -8,6 +8,14 @@ import ImageIcon from "../assets/image.svg";
 
 const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState("javascript");
+  const navigate = useNavigate();
+  const { query, startIndex } = useParams();
+
+  const searchQueryHandle = (event) => {
+    if (event.key === "Enter" && searchQuery.length > 0) {
+      navigate(`/${searchQuery}/${1}`);
+    }
+  };
 
   return (
     <div
@@ -20,9 +28,7 @@ const SearchInput = () => {
         onChange={(e) => {
           setSearchQuery(e.target.value);
         }}
-        onKeyUp={(e) => {
-          console.log(e.target.value);
-        }}
+        onKeyUp={searchQueryHandle}
         value={searchQuery}
         autoFocus
         className="grow outline-0 text-black/[0.87]"
