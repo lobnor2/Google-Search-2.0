@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" exact element={<Home />} />
-        <Route path="/searchresult" element={<SearchResult />} />
+        <Route path="/:query/:startIndex" element={<SearchResult />} />
       </Routes>
     </Router>
   );
