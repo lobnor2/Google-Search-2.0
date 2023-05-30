@@ -6,16 +6,12 @@ import Footer from "./Footer";
 
 const Home = () => {
   return (
-    <div className="flex h-[100vh] flex-col  border border-red-600">
+    <div className="flex h-[100vh] flex-col">
       <HomeHeader />
       {/* main section */}
-      <main className="grow flex justify-center border border-blue-800 my-2">
-        <div className="w-full px-5 flex flex-col items-center mt-44 border border-green-700">
-          <img
-            src={Logo}
-            alt=""
-            className="border border-black w-[172px] md:w-[272px] mb-8"
-          />
+      <main className="grow flex justify-center">
+        <div className="w-full px-5 flex flex-col items-center mt-44 b">
+          <img src={Logo} alt="" className=" w-[172px] md:w-[272px] mb-8" />
           <SearchInput />
           <div className="flex gap-2 text-[#3c4043] mt-8">
             <button className="h-9 px-4 bg-[#f8f9fa] text-sm rounded-md border border-[#f8f9fa] hover:border-[#dadce0] hover:shadow-c2">
