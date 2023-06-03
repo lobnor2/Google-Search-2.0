@@ -8,12 +8,14 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/:query/:startIndex" element={<SearchResult />} />
-      </Routes>
-    </Router>
+    <AppContext>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/:query/:startIndex" element={<SearchResult />} />
+        </Routes>
+      </Router>
+    </AppContext>
   );
 }
 
