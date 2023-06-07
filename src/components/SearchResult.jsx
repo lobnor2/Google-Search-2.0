@@ -46,7 +46,7 @@ const SearchResult = () => {
             ))}
           </>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {items.map((item, index) => (
               <SearchedImageItemTemplate key={index} data={item} />
             ))}
