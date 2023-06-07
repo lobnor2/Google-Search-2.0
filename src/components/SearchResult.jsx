@@ -38,6 +38,20 @@ const SearchResult = () => {
         <div className="flex text-sm text-[#70757a] mb-3">
           {`About ${searchInformation.formattedTotalResults} results in (${searchInformation.formattedSearchTime})`}
         </div>
+        {/* template for all and images will be different */}
+        {!imageSearch ? (
+          <>
+            {items.map((item, index) => (
+              <SearchedItemTemplate key={index} data={item} />
+            ))}
+          </>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+            {items.map((item, index) => (
+              <SearchedImageItemTemplate key={index} data={item} />
+            ))}
+          </div>
+        )}
       </main>
       <Footer />
     </div>
