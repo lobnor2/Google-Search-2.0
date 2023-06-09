@@ -52,6 +52,7 @@ const SearchResult = () => {
             ))}
           </div>
         )}
+        <Pagination queries={queries} />
       </main>
       <Footer />
     </div>
